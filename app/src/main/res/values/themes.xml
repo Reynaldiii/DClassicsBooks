@@ -6,4 +6,49 @@
     </style>
 
     <style name="Theme.DClassicsBooks" parent="Base.Theme.DClassicsBooks" />
+
+    <style name="Heading1">
+        <item name="android:textSize">26sp</item>
+        <item name="android:fontFamily">@font/noto_serif_bold</item>
+        <item name="android:lineHeight">31.2sp</item>
+    </style>
+
+    <style name="Heading2">
+        <item name="android:textSize">22sp</item>
+        <item name="android:fontFamily">@font/noto_serif_semi_bold</item>
+        <item name="android:lineHeight">26.4sp</item>
+    </style>
+
+    <style name="Heading3">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/noto_serif_medium</item>
+        <item name="android:lineHeight">21.6sp</item>
+    </style>
+
+    <style name="BodyText">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/manrope_regular</item>
+        <item name="android:lineHeight">21sp</item>
+    </style>
+
+    <style name="Captions">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/manrope_regular</item>
+        <item name="android:letterSpacing">0.012</item>
+        <item name="android:lineHeight">18sp</item>
+    </style>
+
+    <style name="ButtonLabels">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/manrope_bold</item>
+        <item name="android:letterSpacing">0.1</item>
+        <item name="android:lineHeight">21sp</item>
+    </style>
+
+    <style name="Placeholder">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/manrope_regular</item>
+        <item name="android:lineHeight">16sp</item>
+    </style>
+
 </resources>
