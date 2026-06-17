@@ -51,4 +51,14 @@
         <item name="android:lineHeight">16sp</item>
     </style>
 
+    <style name="ShapeAppearanceOverlayCircle">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="NavDrawerItemText">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/noto_serif_bold</item>
+    </style>
+
 </resources>
