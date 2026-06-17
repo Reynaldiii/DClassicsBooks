@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace = "com.example.dclassicsbooks"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.dclassicsbooks"
