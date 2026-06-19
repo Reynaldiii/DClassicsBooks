@@ -65,6 +65,7 @@
             app:startIconDrawable="@drawable/ic_person"
             app:startIconTint="#888888"
             app:hintEnabled="false"
+            app:errorEnabled="false"
             app:boxBackgroundMode="none">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -79,6 +80,39 @@
                 android:paddingEnd="16dp"
                 android:inputType="text"/>
         </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:id="@+id/usernameErrorGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <TextView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:background="@drawable/bg_error_circle"
+                android:fontFamily="@font/manrope_bold"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="!"
+                android:textColor="@color/light_text"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/tvUsernameError"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/manrope_regular"
+                android:text="Please enter your username"
+                android:textColor="#D50000"
+                android:textSize="12sp" />
+        </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
@@ -97,6 +131,7 @@
             app:endIconMode="password_toggle"
             app:endIconTint="#888888"
             app:hintEnabled="false"
+            app:errorEnabled="false"
             app:boxBackgroundMode="none">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -111,6 +146,39 @@
                 android:paddingEnd="16dp"
                 android:inputType="textPassword"/>
         </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:id="@+id/passwordErrorGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <TextView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:background="@drawable/bg_error_circle"
+                android:fontFamily="@font/manrope_bold"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="!"
+                android:textColor="@color/light_text"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/tvPasswordError"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/manrope_regular"
+                android:text="Password must be alphanumeric"
+                android:textColor="#D50000"
+                android:textSize="12sp" />
+        </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
