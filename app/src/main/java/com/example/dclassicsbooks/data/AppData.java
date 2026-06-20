@@ -21,7 +21,6 @@ public final class AppData {
             new Book(R.drawable.img_pride_and_prejudice, "Pride and Prejudice", "Jane Austen", "40.5k", "4.6", Book.CATEGORY_FICTION),
             new Book(R.drawable.img_the_catcher, "The Catcher in the Rye", "J. D. Salinger", "31.7k", "4.4", Book.CATEGORY_FICTION),
             new Book(R.drawable.img_norwegian, "Norwegian Wood", "Haruki Murakami", "30.9k", "4.3", Book.CATEGORY_FICTION),
-            // Non Fiction
             new Book(R.drawable.img_atomic_habits, "Atomic Habits", "James Clear", "54.1k", "4.9", Book.CATEGORY_NON_FICTION),
             new Book(R.drawable.img_rich, "Rich Dad Poor Dad", "Robert Kiyosaki", "40.3k", "4.6", Book.CATEGORY_NON_FICTION),
             new Book(R.drawable.img_filosofi, "Filosofi Teras", "Henry Manampiring", "59.3k", "4.9", Book.CATEGORY_NON_FICTION),
@@ -31,11 +30,11 @@ public final class AppData {
     };
 
     private static final Store[] STORES = {
-            new Store(R.drawable.img_store_royal, "The Royal Library, London", "24 Regent St, London W1B 5TR, UK"),
-            new Store(R.drawable.img_store_british, "British Classics Corner", "96 Euston Rd, London NW1 2DB, UK"),
-            new Store(R.drawable.img_store_bodleian, "Bodleian Book Hall", "Broad St, Oxford OX1 3BG, UK"),
-            new Store(R.drawable.img_store_ny, "D'Classics New York", "476 5th Ave, New York, NY 10018, US"),
-            new Store(R.drawable.img_store_trinity, "Trinity Literature House", "College Green, Dublin 2, Ireland")
+            new Store(R.drawable.img_store_royal, "The Royal Library, London", "24 Regent St, London W1B 5TR, UK", "Open - Close at 21.00", "Mon - Fri: 08.00 - 21.00", "Sat - Sun: 10.00 - 20.00"),
+            new Store(R.drawable.img_store_british, "The British Library, London", "96 Euston Rd, London NW1 2DB, UK", "Open - Close at 20.00", "Mon - Fri: 08.00 - 20.00", "Sat - Sun: 10.00 - 20.00"),
+            new Store(R.drawable.img_store_bodleian, "Bodleian Library, Oxford", "Broad St, Oxford OX1 3BG, UK", "Open - Close at 21.00", "Mon - Sat: 08.00 - 21.00", "Sun: Closed"),
+            new Store(R.drawable.img_store_trinity, "Trinity College Library, Dublin", "College Green, Dublin 2, D02 PN40, Ireland", "Open - Close at 22.00", "Mon - Fri: 10.00 - 22.00", "Sat - Sun: 10.00 - 20.00"),
+            new Store(R.drawable.img_store_ny, "NY Public Library, New York", "476 5th Ave, New York, NY 10018, USA", "Open - Close at 21.00", "Mon - Fri: 09.00 - 21.00", "Sat - Sun: 10.00 - 21.00")
     };
 
     private AppData() {
