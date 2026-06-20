@@ -15,69 +15,11 @@
         android:background="@color/background_color"
         android:orientation="vertical">
 
-        <LinearLayout
+        <include
             android:id="@+id/booksHeader"
+            layout="@layout/layout_app_header"
             android:layout_width="match_parent"
-            android:layout_height="76dp"
-            android:background="@color/primary_color"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:paddingStart="20dp"
-            android:paddingTop="18dp"
-            android:paddingEnd="18dp"
-            android:paddingBottom="4dp">
-
-            <ImageButton
-                android:id="@+id/btnMenu"
-                android:layout_width="42dp"
-                android:layout_height="42dp"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:contentDescription="Open menu"
-                android:padding="7dp"
-                android:src="@drawable/ic_hamburger_menu"
-                app:tint="@color/light_text" />
-
-            <LinearLayout
-                android:id="@+id/greetingGroup"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="9dp"
-                android:layout_weight="1"
-                android:gravity="end"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/tvGreetingSmall"
-                    style="@style/Captions"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:maxLines="1"
-                    android:text="Hello! Welcome back,"
-                    android:textColor="@color/accent_color"
-                    android:textSize="9sp" />
-
-                <TextView
-                    android:id="@+id/tvGreetingName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:fontFamily="@font/noto_serif_bold"
-                    android:maxLines="1"
-                    android:text="Book Lover"
-                    android:textColor="@color/light_text"
-                    android:textSize="17sp" />
-            </LinearLayout>
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/imgProfile"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:contentDescription="Profile"
-                android:scaleType="centerCrop"
-                android:src="@drawable/img_profile"
-                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlayCircle" />
-        </LinearLayout>
+            android:layout_height="88dp" />
 
         <ScrollView
             android:layout_width="match_parent"

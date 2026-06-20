@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/appHeader"
+    android:layout_width="match_parent"
+    android:layout_height="88dp"
+    android:background="@color/primary_color"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="20dp"
+    android:paddingTop="22dp"
+    android:paddingEnd="22dp"
+    android:paddingBottom="8dp">
+
+    <ImageButton
+        android:id="@+id/btnMenu"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Open menu"
+        android:padding="7dp"
+        android:src="@drawable/ic_hamburger_menu"
+        app:tint="@color/light_text" />
+
+    <LinearLayout
+        android:id="@+id/greetingGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="9dp"
+        android:layout_weight="1"
+        android:gravity="end"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvGreetingSmall"
+            style="@style/Captions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Hello! Welcome back,"
+            android:textColor="@color/accent_color" />
+
+        <TextView
+            android:id="@+id/tvGreetingName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/noto_serif_bold"
+            android:maxLines="1"
+            android:text="Book Lover"
+            android:textColor="@color/light_text"
+            android:textSize="17sp" />
+    </LinearLayout>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imgProfile"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:contentDescription="Profile"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_profile"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlayCircle" />
+</LinearLayout>
