@@ -6,12 +6,12 @@ import com.example.dclassicsbooks.model.Store;
 
 public final class AppData {
 
-    private static final int[] TOP_BOOK_IMAGES = {
-            R.drawable.img_wuthering,
-            R.drawable.img_the_great,
-            R.drawable.img_crime,
-            R.drawable.img_the_picture,
-            R.drawable.img_pride
+    private static final Book[] TOP_CAROUSEL_BOOKS = {
+            new Book(R.drawable.img_wuthering, "Wuthering Heights", "Emily Bronte", "21.8k", "4.5", Book.CATEGORY_FICTION),
+            new Book(R.drawable.img_the_great, "The Great Gatsby", "F. Scott Fitzgerald", "24.3k", "4.8", Book.CATEGORY_FICTION),
+            new Book(R.drawable.img_crime, "Crime and Punishment", "Fyodor Dostoevsky", "18.7k", "4.6", Book.CATEGORY_FICTION),
+            new Book(R.drawable.img_the_picture, "The Picture of Dorian Gray", "Oscar Wilde", "17.4k", "4.4", Book.CATEGORY_FICTION),
+            new Book(R.drawable.img_pride, "Pride and Prejudice", "Jane Austen", "40.5k", "4.6", Book.CATEGORY_FICTION)
     };
 
     private static final Book[] ALL_BOOKS = {
@@ -41,7 +41,15 @@ public final class AppData {
     }
 
     public static int[] getTopBookImages() {
-        return TOP_BOOK_IMAGES;
+        int[] images = new int[TOP_CAROUSEL_BOOKS.length];
+        for (int i = 0; i < TOP_CAROUSEL_BOOKS.length; i++) {
+            images[i] = TOP_CAROUSEL_BOOKS[i].imageRes;
+        }
+        return images;
+    }
+
+    public static Book[] getTopCarouselBooks() {
+        return TOP_CAROUSEL_BOOKS;
     }
 
     public static Book[] getFeaturedBooks() {

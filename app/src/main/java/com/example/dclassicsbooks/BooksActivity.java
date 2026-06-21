@@ -156,6 +156,7 @@ public class BooksActivity extends AppCompatActivity {
         title.setText(topBook.title);
         author.setText(topBook.author);
         description.setText(getTopBookDescription(topBook));
+        slide.setOnClickListener(v -> openBookDetail(topBook));
     }
 
     private String getTopBookDescription(Book book) {
@@ -241,6 +242,7 @@ public class BooksActivity extends AppCompatActivity {
         title.setText(book.title);
         author.setText(book.author);
         meta.setText(book.views + " views | " + book.rating);
+        item.setOnClickListener(v -> openBookDetail(book));
 
         return item;
     }
@@ -292,6 +294,10 @@ public class BooksActivity extends AppCompatActivity {
 
     private void stopTopBookCarousel() {
         carouselHandler.removeCallbacks(topBookAutoSlide);
+    }
+
+    private void openBookDetail(Book book) {
+        startActivity(BookDetailActivity.newIntent(this, book));
     }
 
     private void applyBookCoverZoom(ImageView imageView) {

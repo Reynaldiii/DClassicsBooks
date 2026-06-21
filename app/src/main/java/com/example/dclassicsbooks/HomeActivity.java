@@ -68,7 +68,7 @@ public class HomeActivity extends AppCompatActivity {
     private int topBookIndex = 0;
     private int storeIndex = 0;
 
-    private final int[] topBookImages = AppData.getTopBookImages();
+    private final Book[] topBooks = AppData.getTopCarouselBooks();
     private final Book[] featuredBooks = AppData.getFeaturedBooks();
     private final Store[] stores = AppData.getStores();
 
@@ -169,14 +169,14 @@ public class HomeActivity extends AppCompatActivity {
         topBookStage.removeAllViews();
         topBookCards.clear();
 
-        for (int topBookImage : topBookImages) {
-            MaterialCardView coverCard = createTopBookCard(topBookImage);
+        for (Book topBook : topBooks) {
+            MaterialCardView coverCard = createTopBookCard(topBook);
             topBookCards.add(coverCard);
             topBookStage.addView(coverCard);
         }
 
         positionTopCards(false);
-        bindDots(topBookDots, topBookImages.length, topBookIndex, false);
+        bindDots(topBookDots, topBooks.length, topBookIndex, false);
 
         btnNextTop.setOnClickListener(v -> {
             moveTopCarousel(true);
@@ -189,7 +189,7 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
-    private MaterialCardView createTopBookCard(int imageRes) {
+    private MaterialCardView createTopBookCard(Book book) {
         MaterialCardView cardView = new MaterialCardView(this);
         FrameLayout.LayoutParams cardParams = new FrameLayout.LayoutParams(dp(124), dp(176));
         cardParams.gravity = Gravity.CENTER;
@@ -200,12 +200,13 @@ public class HomeActivity extends AppCompatActivity {
         cardView.setUseCompatPadding(false);
 
         ImageView imageView = new ImageView(this);
-        imageView.setImageResource(imageRes);
+        imageView.setImageResource(book.imageRes);
         applyBookCoverZoom(imageView);
         cardView.addView(imageView, new ViewGroup.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT
         ));
+        cardView.setOnClickListener(v -> openBookDetail(book));
 
         return cardView;
     }
@@ -389,6 +390,7 @@ public class HomeActivity extends AppCompatActivity {
         );
         metaParams.topMargin = dp(2);
         item.addView(meta, metaParams);
+        item.setOnClickListener(v -> openBookDetail(book));
 
         return item;
     }
@@ -462,13 +464,13 @@ public class HomeActivity extends AppCompatActivity {
 
     private void moveTopCarousel(boolean forward) {
         if (forward) {
-            topBookIndex = (topBookIndex + 1) % topBookImages.length;
+            topBookIndex = (topBookIndex + 1) % topBooks.length;
         } else {
-            topBookIndex = (topBookIndex - 1 + topBookImages.length) % topBookImages.length;
+            topBookIndex = (topBookIndex - 1 + topBooks.length) % topBooks.length;
         }
 
         positionTopCards(true);
-        bindDots(topBookDots, topBookImages.length, topBookIndex, false);
+        bindDots(topBookDots, topBooks.length, topBookIndex, false);
     }
 
     private void moveStoreCarousel(boolean forward) {
@@ -541,6 +543,10 @@ public class HomeActivity extends AppCompatActivity {
         textView.setTypeface(typeface);
         textView.setIncludeFontPadding(false);
         return textView;
+    }
+
+    private void openBookDetail(Book book) {
+        startActivity(BookDetailActivity.newIntent(this, book));
     }
 
     private void applyBookCoverZoom(ImageView imageView) {
